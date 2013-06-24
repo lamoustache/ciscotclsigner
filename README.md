@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Cisco Tcl Signer
 ================
 
@@ -11,25 +12,29 @@ Cisco Tcl Signer has three mode of operation:
 
 To use Cisco Tcl Signer you must specify the mode of operation.
 
-[ moustache@antil0p ] ~/code/ciscotclsigner > ./ciscotclsigner.sh
-ciscotclsigner.sh Version 0.1 2013
+    [ moustache@antil0p ] ~/code/ciscotclsigner > ./ciscotclsigner.sh
+    ciscotclsigner.sh Version 0.1 2013
 
- ciscotclsigner.sh [-m <Mode> ] [-f <File> ][-c <Cert>] [-k <Private Key> ] [ [-d [-v]] [-h]
- -m Mode          specify operation mode sign | verify | gencrt
- -f file          specify file to sign or verify
- -c Cert          specify certificate path
- -k Private Key   specify private key path
- -d               debug
- -h               this so helpful and beautiful output
+    ciscotclsigner.sh [-m <Mode> ] [-f <File> ][-c <Cert>] [-k <Private Key> ] [ [-d [-v]] [-h]
+    -m Mode          specify operation mode sign | verify | gencrt
+    -f file          specify file to sign or verify
+    -c Cert          specify certificate path
+    -k Private Key   specify private key path
+    -d               debug
+    -h               this so helpful and beautiful output
 
 To sign a Tcl script
 
-./ciscotclsigner.sh -m sign -c example/cert.pem -k example/key.pem -f example/helloworld.tcl
+    ./ciscotclsigner.sh -m sign -c example/cert.pem -k example/key.pem -f example/helloworld.tcl
 
 To verify the signature of a Tcl script
 
-./ciscotclsigner.sh -m verify -c example/cert.pem -f example/helloworld.tcl
+    ./ciscotclsigner.sh -m verify -c example/cert.pem -f example/helloworld.tcl
 
 To generate a certificate and a private key
 
-./ciscotclsigner.sh -m gencrt -c example/cert.pem -k example/key.pem
+    ./ciscotclsigner.sh -m gencrt -c example/cert.pem -k example/key.pem
+=======
+ciscotclsigner
+==============
+>>>>>>> aaf155db99dab0a387dda2dc16cc58f575d2112a
