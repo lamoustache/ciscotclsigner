@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Cisco Tcl Signer
 ================
 
@@ -34,7 +33,3 @@ To verify the signature of a Tcl script
 To generate a certificate and a private key
 
     ./ciscotclsigner.sh -m gencrt -c example/cert.pem -k example/key.pem
-=======
-ciscotclsigner
-==============
->>>>>>> aaf155db99dab0a387dda2dc16cc58f575d2112a
