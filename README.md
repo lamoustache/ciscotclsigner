@@ -7,7 +7,7 @@ Cisco Tcl Signer has three mode of operation:
 
     SIGN <sign>: Sign a Tcl script and verify the signature is valid.
     VERIFY <verify>: Verify the signature of a Tcl script.
-    GENCRT <gencrt>: Genrate a x509 certificate and private key to sign a script. 
+    GENCRT <gencrt>: Generate a x509 certificate and private key to sign a script. 
 
 To use Cisco Tcl Signer you must specify the mode of operation.
 
