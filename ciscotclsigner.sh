@@ -119,13 +119,13 @@ if [ "$?" -eq 0 ]; then
             echo "$ERROR ERROR:$CLEAR Cisco header not processed, couldn't append Cisco header to signed file"
             return 1
         else
-            _log "$TRACE DEBUG:$CLEAR Cisco header append to sign Tcl file"
-            cat "$FILE" "$FILE".hex_sig > "$FILE"'_signed.tcl'
+            _log "$TRACE DEBUG:$CLEAR Cisco header appended to sign Tcl file"
+            cat "$FILE" "$FILE".hex_sig > "$FILE"'_signed'
             if [ "$?" -ne 0 ]; then
                 echo "$ERROR ERROR:$CLEAR Couldn't append the content of the nonbinary signature file to the signed Tcl file stored in DER PKCS#7"
                 return 1
             else
-                _log "$TRACE DEBUG:$CLEAR Append content of the nonbinary signature file to the signed Tcl file stored in DER PKCS#7"
+                _log "$TRACE DEBUG:$CLEAR Appended content of the nonbinary signature file to the signed Tcl file stored in DER PKCS#7"
                 if [ -f $FILE.hex ] && [ -f $FILE.hex_sig ]; then
                     _log "$TRACE DEBUG:$CLEAR Deleting temporary files $FILE.hex $FILE.hex_sig"
                     rm "$FILE".hex "$FILE".hex_sig
@@ -193,6 +193,7 @@ elif [ "$MODE" = "sign" ]; then
             verify
             if [ "$?" -eq 0 ]; then
                 echo "$INFO INFO:$CLEAR The signature of the Tcl file is valid\n"
+                echo "$INFO INFO:$CLEAR $FILE"_signed" is ready to be uploaded on the device\n"
                 exit 0
             else
                 echo "$ERROR ERROR: The signature of Tcl file couldn't be verified"
@@ -216,6 +217,7 @@ elif [ "$MODE" = "verify" ]; then
         verify
         if [ "$?" -eq 0 ]; then
             echo "$INFO INFO:$CLEAR The signature of the Tcl file is valid\n"
+            echo "$INFO INFO:$CLEAR $FILE"_signed" is ready to be uploaded on the device\n"
             exit 0
         else
             echo "$ERROR ERROR:$CLEAR The signature of Tcl file couldn't be verified\n"
