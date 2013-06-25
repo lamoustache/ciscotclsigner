@@ -3,7 +3,7 @@ Cisco Tcl Signer
 
 Cisco IOS Software 12.4(15)T includes support for the cryptographic signing of Tcl scripts. Cryptographic signing makes it possible to ensure that an IOS device will only execute Tcl scripts that have been signed with a certificate for which the device has been explicitly configured. This feature may also be used to prevent the execution of scripts in situations where the signature verification fails due to modification of the script post-signing or the complete lack of a signature.
 
-Cisco Tcl Signer has three mode of operation:
+Cisco Tcl Signer has three modes of operation:
 
     SIGN <sign>: Sign a Tcl script and verify the signature is valid.
     VERIFY <verify>: Verify the signature of a Tcl script.
