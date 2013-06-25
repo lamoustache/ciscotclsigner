@@ -126,7 +126,18 @@ if [ $? -eq 0 ]; then
                 return 1
             else
                 echo "$INFO INFO:$CLEAR Append content of the nonbinary signature file to the signed Tcl file stored in DER PKCS#7"
-                return 0
+                if [ -f $FILE.hex ] && [ -f $FILE.hex_sig ]; then
+                    echo $?
+                    _log "$TRACE DEBUG:$CLEAR Deleting temporary files $FILE.hex $FILE.hex_sig"
+                    rm $FILE.hex $FILE.hex_sig
+                    if [ $? -eq 0 ]; then
+                        return 0
+                    else
+                        return 1
+                    fi
+                else
+                    return 1
+                fi
             fi
         fi
     fi
@@ -208,7 +219,7 @@ elif [ "$MODE" = "verify" ]; then
             echo "$INFO INFO:$CLEAR The signature of the Tcl file is valid"
             exit 0
         else
-            echo "$ERROR ERROR: The signature of Tcl file couldn't be verified"
+            echo "$ERROR ERROR:$CLEAR The signature of Tcl file couldn't be verified"
             exit 1
         fi
     fi
