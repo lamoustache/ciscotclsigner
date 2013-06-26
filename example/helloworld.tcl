@@ -1,3 +1,3 @@
-#!/bin/tcl
+#!/usr/bin/tclsh
 
 puts "Hello, World!"
